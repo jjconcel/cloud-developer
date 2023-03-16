@@ -8,6 +8,8 @@ Content for Udacity's cloud developer nanodegree's following two courses:
 * Course 02 - Full Stack Apps on AWS
 * Course 04 - Develop & Deploy Serverless App
 
+Test change for branch rules on Master and Stage.
+
 Here is the repository structure:
 ```bash
 ├── README.md
