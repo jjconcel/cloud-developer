@@ -18,6 +18,25 @@ router.get('/', async (req: Request, res: Response) => {
 
 //@TODO
 //Add an endpoint to GET a specific resource by Primary Key
+router.get('/:id', async (req: Request, res: Response) => {
+    
+    try {
+        const id = JSON.parse(req.params.id);
+        
+        // check id is valid
+        if (!id || isNaN(id)) {
+            return res.status(400).send({ message: 'Id is required' });
+        }
+    
+        const item = await FeedItem.findByPk(id);
+    
+        res.status(200).send(item);
+    }
+    catch(e){
+        const result = (e as Error).message;
+        res.status(400).send(result);
+    }
+});
 
 // update a specific resource
 router.patch('/:id', 
